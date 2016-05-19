@@ -1,0 +1,22 @@
+﻿
+<log4net>
+    <appender name="TheAppender" type="log4net.Appender.RollingFileAppender">
+        <file value=".\Errors\OnenoteConverter\log.txt" />
+        <appendToFile value="true" />
+        <rollingStyle value="Composite" />
+        <datePattern value="yyyy-MM-dd" />
+        <maxSizeRollBackups value="400" />
+        <PreserveLogFileNameExtension value="true"/>
+        <maximumFileSize value="1MB" />
+        <layout type="log4net.Layout.PatternLayout">
+            <conversionPattern value="%date [%location]%newline     %-5level %logger %message%newline" />
+        </layout>
+    </appender>
+
+
+    <root>
+        <level value="all" />
+        <appender-ref ref="TheAppender" />
+    </root>
+
+</log4net>
